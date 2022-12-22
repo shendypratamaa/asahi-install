@@ -61,6 +61,9 @@ echo "========================================================================="
 # ARCH(dotfiles)
 read -p "do you want to install shendypratmaaa/.dotfiles [Y/n] " ANSWER
 if [ -z "$ANSWER" ] || [ "$ANSWER" = "y" ]; then
+
+    rm -rf $(fd . -t d) && rm -rf .*
+
     mkdir -p  data desktop docs downloads music pictures share video .local/share .cache/tmp .cache/zsh
 
     cd $HOME && git clone https://github.com/shendypratamaa/.arch
@@ -85,7 +88,6 @@ if [ -z "$ANSWER" ] || [ "$ANSWER" = "y" ]; then
 
     initfile=(
         .vimrc
-        .xinitrc
         .zprofile
     )
 
@@ -132,6 +134,7 @@ if [ "$ANSWER" = "y" ] || [ -z "$ANSWER" ]; then
     cd $HOME && git clone https://aur.archlinux.org/yay.git;
     cd ~/yay && makepkg -si;
     rm -rf $HOME/yay;
+    rm -rf $HOME/.cache/go-build;
     sleep 2
 fi
 
@@ -157,11 +160,11 @@ echo "========================================================================="
 read -p "do you want to install neovim build from source + packer + node(nvm) [Y/n] " ANSWER
 if [ "$A NSWER" = "y" ] || [ -z "$ANSWER" ]; then
 	#neovim
-    sudo pacman -S base-devel cmake unzip ninja tree-sitter curl
-    cd ~/.local/share
-    git clone https://github.com/neovim/neovim
-    cd neovim && make CMAKE_BUILD_TYPE=Release
-    git checkout v0.8.0 && sudo make install
+        sudo pacman -S base-devel cmake unzip ninja tree-sitter curl
+        cd ~/.local/share
+        git clone https://github.com/neovim/neovim
+        cd neovim && make CMAKE_BUILD_TYPE=Release
+        git checkout v0.8.0 && sudo make install
 
 	#node
 	cd $HOME/.local/share && git clone https://github.com/nvm-sh/nvm
