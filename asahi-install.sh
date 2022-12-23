@@ -23,7 +23,7 @@ echo "127.0.0.1         localhost" >> /etc/hosts
 echo "::1               localhost" >> /etc/hosts
 echo "127.0.1.1         $HOSTNAME.local $HOSTNAME" >> /etc/hosts
 
-pacman -S xorg-server xorg-xinit xorg-xsetroot libx11 libxinerama libxft \
+pacman -S xorg-server xorg-xinit xorg-xsetroot xorg-xev libx11 libxinerama libxft tmux \
     picom dunst libnotify xdg-user-dirs git stow lazygit git-delta neofetch tree sudo which bc \
     mpv sxiv fzf man-db zathura zathura-pdf-poppler ffmpeg ffmpegthumbnailer imagemagick ueberzug \
     python-pywal xwallpaper unclutter xclip maim xdotool sxhkd pacman-contrib upower \
@@ -84,6 +84,7 @@ if [ -z "$ANSWER" ] || [ "$ANSWER" = "y" ]; then
         lf
         picom
         pipe
+        tmux
     )
 
     initfile=(
