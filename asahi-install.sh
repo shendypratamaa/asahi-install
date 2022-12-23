@@ -29,7 +29,7 @@ pacman -S xorg-server xorg-xinit xorg-xsetroot libx11 libxinerama libxft \
     python-pywal xwallpaper unclutter xclip maim xdotool sxhkd pacman-contrib upower \
     zsh bat exa fd ripgrep jq htop dhcpcd ufw zip unzip unrar lf make cmake trash-cli \
     bluez bluez-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulsemixer \
-    ttf-hack-nerd ttf-jetbrains-mono \
+    ttf-hack-nerd ttf-jetbrains-mono noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
     thunar firefox \
 
 echo -n "Username : "; read USER_NAME
