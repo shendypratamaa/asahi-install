@@ -64,7 +64,7 @@ if [ -z "$ANSWER" ] || [ "$ANSWER" = "y" ]; then
 
     rm -rf $(fd . -t d) && rm -rf .*
 
-    mkdir -p  data desktop docs downloads music pictures share video .local/share .cache/tmp .cache/zsh
+    mkdir -p  applications data desktop docs downloads music pictures share video .local/share .cache/tmp .cache/zsh
 
     cd $HOME && git clone https://github.com/shendypratamaa/.arch
 
@@ -174,7 +174,7 @@ if [ "$A NSWER" = "y" ] || [ -z "$ANSWER" ]; then
 	nvm install 16.18.1
 	nvm use node
 	nvm alias default
-	npm install --global nodemon yarn
+	npm install --global nodemon yarn nativefier
 
 	#packer
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
