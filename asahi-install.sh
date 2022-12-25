@@ -23,7 +23,7 @@ echo "127.0.0.1         localhost" >> /etc/hosts
 echo "::1               localhost" >> /etc/hosts
 echo "127.0.1.1         $HOSTNAME.local $HOSTNAME" >> /etc/hosts
 
-pacman -S xorg-server xorg-xinit xorg-xsetroot xorg-xev libx11 libxinerama libxft tmux \
+pacman -S xorg-server xorg-xinit xorg-xsetroot xorg-xev libx11 libxinerama libxft vim tmux gcc \
     picom dunst libnotify xdg-user-dirs git stow lazygit git-delta neofetch tree sudo which bc \
     mpv sxiv fzf man-db zathura zathura-pdf-poppler ffmpeg ffmpegthumbnailer imagemagick ueberzug \
     python-pywal xwallpaper unclutter xclip maim xdotool sxhkd pacman-contrib upower \
@@ -125,20 +125,6 @@ if [ "$ANSWER" = "y" ] || [ -z "$ANSWER" ]; then
 	sleep 2
 fi
 
-# AUR HELPER(yay)
-printf '\033c'
-echo "========================================================================="
-echo "================= shendypratamaa/asahi-install.sh ======================="
-echo "========================================================================="
-read -p "do you want to install aur helper (yay) [Y/n] " ANSWER
-if [ "$ANSWER" = "y" ] || [ -z "$ANSWER" ]; then
-    cd $HOME && git clone https://aur.archlinux.org/yay.git;
-    cd ~/yay && makepkg -si;
-    rm -rf $HOME/yay;
-    rm -rf $HOME/.cache/go-build;
-    sleep 2
-fi
-
 # NVIM-BASE(neovim-config)
 printf '\033c'
 echo "========================================================================="
@@ -180,6 +166,20 @@ if [ "$A NSWER" = "y" ] || [ -z "$ANSWER" ]; then
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 	nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 	nvim -c 'TSUpdate' -c 'Mason'
+    sleep 2
+fi
+
+# AUR HELPER(yay)
+printf '\033c'
+echo "========================================================================="
+echo "================= shendypratamaa/asahi-install.sh ======================="
+echo "========================================================================="
+read -p "do you want to install aur helper (yay) [Y/n] " ANSWER
+if [ "$ANSWER" = "y" ] || [ -z "$ANSWER" ]; then
+    cd $HOME && git clone https://aur.archlinux.org/yay.git;
+    cd ~/yay && makepkg -si;
+    rm -rf $HOME/yay;
+    rm -rf $HOME/.cache/go-build;
     sleep 2
 fi
 
