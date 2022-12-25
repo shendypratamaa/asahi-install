@@ -27,8 +27,8 @@ pacman -S xorg-server xorg-xinit xorg-xsetroot xorg-xev libx11 libxinerama libxf
     picom dunst libnotify xdg-user-dirs git stow lazygit git-delta neofetch tree sudo which bc \
     mpv sxiv fzf man-db zathura zathura-pdf-poppler ffmpeg ffmpegthumbnailer imagemagick ueberzug \
     python-pywal xwallpaper unclutter xclip maim xdotool sxhkd pacman-contrib upower \
-    zsh bat exa fd ripgrep jq htop dhcpcd ufw zip unzip unrar lf make cmake trash-cli \
-    bluez bluez-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulsemixer \
+    zsh bat exa fd ripgrep jq htop ufw zip unzip unrar lf make cmake trash-cli \
+    bluez bluez-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulsemixer alsa-utils \
     ttf-hack-nerd ttf-jetbrains-mono noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
     thunar firefox \
 
